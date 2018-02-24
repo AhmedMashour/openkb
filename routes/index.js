@@ -112,7 +112,7 @@ router.post('/search_api_bot', function (req, res){
         console.log(results)        
 
         try {
-            SendMessg("http://192.168.1.5:3000/kb/"+results[0].kb_permalink,results[0].kb_title,req.body.user_name,results[0].kb_title,results[0].kb_body)
+            SendMessg("https://openkbdemo.herokuapp.com/kb/"+results[0].kb_permalink,results[0].kb_title,req.body.user_name,results[0].kb_title,results[0].kb_body)
             
         } catch (error) {
             
