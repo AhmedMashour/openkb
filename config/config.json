@@ -16,7 +16,7 @@
         "featured_articles_count": "4",
         "password_protect": false,
         "show_kb_meta": true,
-        "suggest_allowed": true,
+        "suggest_allowed": true,    
         "show_author_email": false,
         "mermaid": false,
         "mathjax": false,
@@ -24,8 +24,8 @@
         "app_context": "",
         "links_blank_page": true,
         "database": {
-            "type": "embedded",
-            "connection_string":"mongodb://rocketchat:qoln5n5ayad@cluster0-shard-00-02-gest3.mongodb.net:27017/rocketchat?replicaSet=Cluster0-shard-0&ssl=true&authSource=admin"
+            "type": "mongodb",
+            "connection_string":"mongodb://rocketchat:qoln5n5ayad@cluster0-shard-00-02-gest3.mongodb.net:27017/openkb?replicaSet=Cluster0-shard-0&ssl=true&authSource=admin"
         },
         "allow_voting": true,
         "google_analytics": "",

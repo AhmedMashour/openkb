@@ -329,7 +329,8 @@ app.use(function (err, req, res, next){
 });
 
 // sets up the databse depending on whether it's embedded (NeDB) or MongoDB
-if(config.settings.database.type === 'embedded'){
+console.log(config.settings.database.type )
+if(config.settings.database.type == 'embedded'){
     // setup the db's
     var db = new Nedb();
     db = {};
@@ -357,6 +358,10 @@ if(config.settings.database.type === 'embedded'){
         if(err){
             console.error('Error connecting to MongoDB: ' + err);
             process.exit();
+        }
+        else
+        {
+            console.log("connected to mongo server :)")
         }
 
         // setup the collections
