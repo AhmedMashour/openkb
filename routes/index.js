@@ -8,7 +8,9 @@ var _ = require('lodash');
 var mime = require('mime-types');
 var lunr = require('lunr');
 var config = common.read_config();
-var request = require("request")
+var request = require("request");
+var sha256 = require('sha256')
+
 
 var appDir = path.dirname(require('require-main-filename')());
 
@@ -1132,7 +1134,7 @@ router.post('/login_action', function (req, res){
             res.redirect(req.app_context + '/login');
         }else{
             // we have a user under that email so we compare the password
-            if(bcrypt.compareSync(req.body.password, user.user_password) === true){
+            if(bcrypt.compareSync(req.body.password, user.user_password) === true||bcrypt.compareSync(sha256(req.body.password),user.user_password)){
                 req.session.user = req.body.email;
                 req.session.users_name = user.users_name;
                 req.session.user_id = user._id.toString();

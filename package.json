@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "async": "^2.0.1",
+    "bcrypt": "^1.0.3",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.2",
     "bootstrap": "^3.3.7",
@@ -47,6 +48,7 @@
     "require-main-filename": "^1.0.1",
     "rimraf": "^2.5.4",
     "sanitize-html": "^1.14.1",
+    "sha256": "^0.2.0",
     "simplemde": "^1.11.2",
     "sitemap": "^1.8.1",
     "snyk": "^1.41.1",
