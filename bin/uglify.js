@@ -41,3 +41,4 @@ function uglifyFile(filename, type){
         fs.writeFileSync(jsMiniFilename, jsUglified.code, 'utf8');
     }
 }
+    
