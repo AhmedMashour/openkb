@@ -361,7 +361,7 @@ if(config.settings.database.type == 'embedded'){
         }
         else
         {
-            console.log("connected to mongo server :)")
+            console.log("connected to mongo server :)") 
         }
 
         // setup the collections

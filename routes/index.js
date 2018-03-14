@@ -118,6 +118,17 @@ router.post('/search_api_bot', function (req, res){
             
         } catch (error) {
             
+
+        }
+
+        if(results.length==0)
+        {
+            request({  uri: "https://sootyrocket.herokuapp.com/api/opneKB/fail",
+            method: 'POST',
+            headers: {
+              "Content-Type": "application/json"},
+            json: {user:req.body.user_name,text:req.body.searchTerm}
+        })
         }
 
         return res.status(200).json(results);
@@ -131,7 +142,7 @@ function SendMessg(link, text, user, title, des) {
       headers: {
         "Content-Type": "application/json",
         "X-Auth-Token": "BqtM9Qa1PpBFOU9f8rTIJWm-qy9h6XVPMGkX2XGlUcD",
-        "X-User-Id": "raneto"
+        "X-User-Id": "  "
       },
       json: {
   
