@@ -147,7 +147,7 @@ function SendMessg(link, text, user, title, des) {
       json: {
   
         "channel": "@" + user ,
-        "text": "@"+user,
+        "text": "@"+user + " هذا هو المحتوى الذي يوافق بحثك ",
         "alias": "Raneto KB",
         "emoji": ":smile:",
         "avatar": "http://hrringleader.com/wp-content/uploads/2011/08/I-love-HR.jpg",
