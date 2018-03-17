@@ -166,7 +166,7 @@ function SendMessg(link, text, user, title, des) {
       }
   
     }, function (error, response, body) {
-      console.log("Done @", user)
+      console.log("Done @", user,error)
     });
   }
 
