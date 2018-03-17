@@ -141,7 +141,7 @@ function SendMessg(link, text, user, title, des) {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
-        "X-Auth-Token": "BqtM9Qa1PpBFOU9f8rTIJWm-qy9h6XVPMGkX2XGlUcD",
+        "X-Auth-Token": "6Xm_t-J31m-AY0zWefKo-Mi01J-unKVavvq2HqN27qi",
         "X-User-Id": "raneto"
       },
       json: {
