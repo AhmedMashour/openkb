@@ -137,7 +137,7 @@ router.post('/search_api_bot', function (req, res){
 
 function SendMessg(link, text, user, title, des) {
     request({
-      uri: "http://52.25.193.28/api/v1/chat.postMessage",
+      uri: "http://chat.getsooty.com/api/v1/chat.postMessage",
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
