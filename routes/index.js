@@ -146,9 +146,9 @@ function SendMessg(link, text, user, title, des) {
       },
       json: {
   
-        "channel": "@" + user ,
+        "channel": "@" + user + " المحتوى الذى وافق عملية بحثك" ,
         "text": "@"+user,
-        "alias": "Raneto KB",
+        "alias": "Ejabi Bot",
         "emoji": ":smile:",
         "avatar": "http://hrringleader.com/wp-content/uploads/2011/08/I-love-HR.jpg",
         "url": "#",
