@@ -146,8 +146,8 @@ function SendMessg(link, text, user, title, des) {
       },
       json: {
   
-        "channel": "@" + user + " المحتوى الذى وافق عملية بحثك" ,
-        "text": "@"+user,
+        "channel": "@" + user ,
+        "text": "@"+user + " المحتوى الذى وافق عملية بحثك",
         "alias": "KB Bot",
         "emoji": ":smile:",
         "avatar": "https://botlist.co/images/placeholder/BotList-icon-color.jpg",
