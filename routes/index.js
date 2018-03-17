@@ -157,10 +157,7 @@ function SendMessg(link, text, user, title, des) {
           "title": title,
           "title_link": link,
           "text": des,
-          "fields": [{
-            "title": "Priority",
-            "value": "Hight"
-          }]
+          
         }]
   
       }
