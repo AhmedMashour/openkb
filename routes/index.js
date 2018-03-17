@@ -148,9 +148,9 @@ function SendMessg(link, text, user, title, des) {
   
         "channel": "@" + user + " المحتوى الذى وافق عملية بحثك" ,
         "text": "@"+user,
-        "alias": "Ejabi Bot",
+        "alias": "KB Bot",
         "emoji": ":smile:",
-        "avatar": "http://hrringleader.com/wp-content/uploads/2011/08/I-love-HR.jpg",
+        "avatar": "https://botlist.co/images/placeholder/BotList-icon-color.jpg",
         "url": "#",
         "attachments": [{
           "color": "green",
