@@ -137,17 +137,17 @@ router.post('/search_api_bot', function (req, res){
 
 function SendMessg(link, text, user, title, des) {
     request({
-      uri: "http://chat.getsooty.com/api/v1/chat.postMessage",
+      uri: "http://52.25.193.28/api/v1/chat.postMessage",
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
         "X-Auth-Token": "BqtM9Qa1PpBFOU9f8rTIJWm-qy9h6XVPMGkX2XGlUcD",
-        "X-User-Id": "  "
+        "X-User-Id": "yolobot"
       },
       json: {
   
         "channel": "@" + user ,
-        "text": "@"+user + " هذا هو المحتوى الذي يوافق بحثك ",
+        "text": "@"+user,
         "alias": "Raneto KB",
         "emoji": ":smile:",
         "avatar": "http://hrringleader.com/wp-content/uploads/2011/08/I-love-HR.jpg",
