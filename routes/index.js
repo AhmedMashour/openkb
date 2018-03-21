@@ -168,6 +168,20 @@ function SendMessg(link, text, user, title, des) {
   }
 
 // vote on articles
+
+router.post('/GetTopQuestion',(req,res)=>
+{
+    var db = req.app.db;
+    
+    db.kb.find({kb_published:"true"}).sort({ kb_viewcount : -1} ).toArray((r,ress)=>
+    {
+        console.log(r)
+        res.send(ress);
+
+    })
+
+
+})
 router.post('/vote', function (req, res){
     var db = req.app.db;
 
