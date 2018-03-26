@@ -173,7 +173,7 @@ router.post('/GetTopQuestion',(req,res)=>
 {
     var db = req.app.db;
     
-    db.kb.find({$query:{kb_published:"true"},$orderby:{ kb_viewcount : 1}}).toArray((r,ress)=>
+    db.kb.find({$query:{kb_published:"true"},$orderby:{ kb_viewcount : -1}}).toArray((r,ress)=>
     {
         console.log(r)
         res.send(ress);
