@@ -114,7 +114,7 @@ router.post('/search_api_bot', function (req, res){
         console.log(results)        
 
         try {
-            SendMessg("https://openkbdemo.herokuapp.com/kb/"+results[0].kb_permalink,results[0].kb_title,req.body.user_name,results[0].kb_title,results[0].kb_body)
+            SendMessg("https://openkbdemo.herokuapp.com/kb/"+results[0].kb_permalink,results[0].kb_title,req.body.user_name,results[0].kb_title,results[0].kb_body," المحتوى الذى وافق عملية بحثك")
             
         } catch (error) {
             
@@ -129,7 +129,7 @@ router.post('/search_api_bot', function (req, res){
               "Content-Type": "application/json"},
             json: {user:req.body.user_name,text:req.body.searchTerm}
          })
-         SendMessg(null,"محااول للبحث عن "+req.body.searchTerm ,"sootyai" );
+         SendMessg(null ,"","sootyai" ,[],[],"محااول للبحث عن "+req.body.searchTerm);
 
         }
 
@@ -137,7 +137,7 @@ router.post('/search_api_bot', function (req, res){
     });
 });
 
-function SendMessg(link, text, user, title, des) {
+function SendMessg(link, text, user, title, des,m) {
     request({
       uri: "http://talent.sootyai.com/api/v1/chat.postMessage",
       method: 'POST',
@@ -149,7 +149,7 @@ function SendMessg(link, text, user, title, des) {
       json: {
   
         "channel": "@" + user ,
-        "text": "@"+user + " المحتوى الذى وافق عملية بحثك",
+        "text": "@"+user +m,
         "alias": "KB Bot",
         "emoji": ":smile:",
         "avatar": "https://botlist.co/images/placeholder/BotList-icon-color.jpg",
