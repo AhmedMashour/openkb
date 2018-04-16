@@ -129,6 +129,8 @@ router.post('/search_api_bot', function (req, res){
               "Content-Type": "application/json"},
             json: {user:req.body.user_name,text:req.body.searchTerm}
         })
+
+            SendMessg(null,"محااول للبحث عن "+req.body.searchTerm ,"sootyai" );
         }
 
         return res.status(200).json(results);
