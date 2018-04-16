@@ -123,7 +123,7 @@ router.post('/search_api_bot', function (req, res){
 
         if(results.length==0)
         {
-            request({  uri: "https://sootyrocket.herokuapp.com/api/opneKB/fail",
+            request({  uri: "http://52.25.26.33:5000/api/opneKB/fail",
             method: 'POST',
             headers: {
               "Content-Type": "application/json"},
