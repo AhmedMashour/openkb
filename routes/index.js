@@ -114,7 +114,7 @@ router.post('/search_api_bot', function (req, res){
         console.log(results)        
 
         try {
-            SendMessg("https://openkbdemo.herokuapp.com/kb/"+results[0].kb_permalink,results[0].kb_title,req.body.user_name,results[0].kb_title,results[0].kb_body," المحتوى الذى وافق عملية بحثك")
+            SendMessg(req.query.id,"https://openkbdemo.herokuapp.com/kb/"+results[0].kb_permalink,results[0].kb_title,req.body.user_name,results[0].kb_title,results[0].kb_body," المحتوى الذى وافق عملية بحثك")
             
         } catch (error) {
             
@@ -123,13 +123,13 @@ router.post('/search_api_bot', function (req, res){
 
         if(results.length==0)
         {
-            request({  uri: "http://34.214.20.31:5000/api/opneKB/fail",
+            request({  uri: "http://"+req.query.id+":5000/api/opneKB/fail",
             method: 'POST',
             headers: {
               "Content-Type": "application/json"},
             json: {user:req.body.user_name,text:req.body.searchTerm}
          })
-         SendMessg(null ,"","sootyai" ,[],[],"محااول للبحث عن "+req.body.searchTerm);
+         SendMessg(req.query.id,null ,"","sootyai" ,[],[],"محااول للبحث عن "+req.body.searchTerm);
 
         }
 
@@ -137,9 +137,9 @@ router.post('/search_api_bot', function (req, res){
     });
 });
 
-function SendMessg(link, text, user, title, des,m) {
+function SendMessg(origin,link, text, user, title, des,m) {
     request({
-      uri: "http://34.214.20.31:3000/api/v1/chat.postMessage",
+      uri: "http://"+origin+":3000/api/v1/chat.postMessage",
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
