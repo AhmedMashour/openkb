@@ -91,7 +91,7 @@ router.post('/search_api', function (req, res){
     });
 });
 router.post('/search_api_bot', function (req, res){
-    console.log(req.body)
+    console.log(req.query.id)
     var db = req.app.db;
     var index = req.app.index;
     req.body.searchTerm=req.body.text;
@@ -123,7 +123,7 @@ router.post('/search_api_bot', function (req, res){
 
         if(results.length==0)
         {
-            request({  uri: "http://52.25.26.33:5000/api/opneKB/fail",
+            request({  uri: "http://34.214.20.31:5000/api/opneKB/fail",
             method: 'POST',
             headers: {
               "Content-Type": "application/json"},
@@ -139,7 +139,7 @@ router.post('/search_api_bot', function (req, res){
 
 function SendMessg(link, text, user, title, des,m) {
     request({
-      uri: "http://talent.sootyai.com/api/v1/chat.postMessage",
+      uri: "http://34.214.20.31:3000/api/v1/chat.postMessage",
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
