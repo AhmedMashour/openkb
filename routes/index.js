@@ -494,6 +494,32 @@ router.get('/edit/:id', common.restrict, function (req, res){
     });
 });
 
+router.post('/create_kb',(req,res)=>
+{
+    var db = req.app.db;
+    var doc = {
+        kb_permalink: Math.random(99999999999999),
+        kb_title: req.body.title,
+        kb_body: req.body.body,
+        kb_published: req.body.frm_kb_published,
+        kb_keywords: [],
+        kb_published_date: new Date(),
+        kb_last_updated: new Date(),
+        kb_last_update_user: req.body.user,
+        kb_author: req.body.user,
+        kb_author_email: req.email
+    };
+
+    db.kb.insert(doc, function (err, newDoc){
+        if(err){
+            console.error('Error inserting document: ' + err);
+
+        }
+    });
+    res.send('ok')
+
+})
+
 // insert new KB form action
 router.post('/insert_kb', common.restrict, function (req, res){
     var db = req.app.db;
@@ -517,13 +543,11 @@ router.post('/insert_kb', common.restrict, function (req, res){
             // permalink exits
             req.session.message = req.i18n.__('Permalink already exists. Pick a new one.');
             req.session.message_type = 'danger';
-
             // keep the current stuff
             req.session.kb_title = req.body.frm_kb_title;
             req.session.kb_body = req.body.frm_kb_body;
             req.session.kb_keywords = req.body.frm_kb_keywords;
             req.session.kb_permalink = req.body.frm_kb_permalink;
-
             // redirect to insert
             res.redirect(req.app_context + '/insert');
         }else{
