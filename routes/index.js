@@ -633,7 +633,7 @@ router.post('/create_kb', (req, res) => {
         kb_last_updated: new Date(),
         kb_last_update_user: req.body.user,
         kb_author: req.body.user,
-        kb_author_email: req.email,
+        kb_author_email: req.body.email,
         kb_password: "",
         kb_featured: "false",
         kb_seo_title: "",
