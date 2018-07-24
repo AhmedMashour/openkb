@@ -627,7 +627,7 @@ router.post('/create_kb', (req, res) => {
         kb_permalink: Math.random(99999999999999),
         kb_title: req.body.title,
         kb_body: req.body.body,
-        kb_published:true,
+        kb_published:"true",
         kb_published: req.body.frm_kb_published,
         kb_keywords: "",
         kb_published_date: new Date(),
