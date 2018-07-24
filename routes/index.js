@@ -628,7 +628,6 @@ router.post('/create_kb', (req, res) => {
         kb_title: req.body.title,
         kb_body: req.body.body,
         kb_published:"true",
-        kb_published: req.body.frm_kb_published,
         kb_keywords: "",
         kb_published_date: new Date(),
         kb_last_updated: new Date(),
