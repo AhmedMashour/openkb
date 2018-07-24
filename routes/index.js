@@ -621,10 +621,15 @@ router.get('/edit/:id', common.restrict, function (req, res) {
     });
 });
 
+function getRandomInt() {
+    min = Math.ceil(0);
+    max = Math.floor(999999999999);
+    return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+  }
 router.post('/create_kb', (req, res) => {
     var db = req.app.db;
     var doc = {
-        kb_permalink: Math.random(99999999999999),
+        kb_permalink: getRandomInt(),
         kb_title: req.body.title,
         kb_body: req.body.body,
         kb_published:"true",
