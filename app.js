@@ -228,7 +228,7 @@ handlebars = handlebars.create({
 
 app.enable('trust proxy');
 app.set('port', process.env.PORT || 6000);
-app.set('bind', process.env.BIND || '0.0.0.0');
+app.set('bind', process.env.BIND || '127.0.0.1');
 app.use("/kb",logger('dev'));
 app.use("/kb",bodyParser.json());
 app.use("/kb",bodyParser.urlencoded({extended: false}));
