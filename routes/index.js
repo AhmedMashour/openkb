@@ -142,7 +142,7 @@ router.post('/search_api_bot', function (req, res) {
         console.log(results)
 
         try {
-            SendMessg(req.query.id, "https://openkbdemo.herokuapp.com/kb/" + results[0].kb_permalink, results[0].kb_title, req.body.user_name, results[0].kb_title, results[0].kb_body, " المحتوى الذى وافق عملية بحثك")
+            SendMessg(req.query.id, "https://gitex.ahla.io/kb/" + results[0].kb_permalink, results[0].kb_title, req.body.user_name, results[0].kb_title, results[0].kb_body, " المحتوى الذى وافق عملية بحثك")
 
         } catch (error) {
 
