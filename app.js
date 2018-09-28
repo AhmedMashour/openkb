@@ -234,13 +234,12 @@ app.use("/kb",bodyParser.json());
 app.use("/kb",bodyParser.urlencoded({extended: false}));
 app.use("/kb",cookieParser('5TOCyfH3HuszKGzFZntk'));
 app.use("/kb",session({
-    resave: false,
+    resave: true,
     saveUninitialized: true,
     secret: 'pAgGxo8Hzg7PFlv1HpO8Eg0Y6xtP7zYx',
     cookie: {
         path: '/kb',
         name:'kid',
-        httpOnly: true,
         maxAge: 3600000 * 24
     },
     name:'kid',
