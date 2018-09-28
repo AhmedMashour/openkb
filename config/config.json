@@ -1,6 +1,6 @@
 {
     "settings": {
-        "route_name": "kb",
+        "route_name": "sooty",
         "num_top_results": "10",
         "date_format": "DD/MM/YYYY h:mmA",
         "show_view_count": true,
