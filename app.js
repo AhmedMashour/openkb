@@ -243,6 +243,7 @@ app.use("/kb",session({
         httpOnly: true,
         maxAge: 3600000 * 24
     },
+    name:'kid',
     store: new Nedb_store({
         filename: 'data/sessions.db'
     })
