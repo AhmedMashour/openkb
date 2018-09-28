@@ -348,7 +348,7 @@ if(config.settings.database.type == 'embedded') {
 
         // lift the app
         app.listen(process.env.PORT||6000, app.get('bind'), function (){
-            console.log('openKB running on host: http://' + app.get('bind') + ':' + 6000);
+            console.log('openKB running on host: http://' + app.get('bind') + ':' + app.get('port'));
             app.emit('openKBstarted');
         });
     });
