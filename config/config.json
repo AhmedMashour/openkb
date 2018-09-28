@@ -25,7 +25,7 @@
         "links_blank_page": true,
         "database": {
             "type": "mongodb",
-            "connection_string":"localhost:27017/openkb"
+            "connection_string":"mongodb://localhost:27017/openkb"
         },
         "allow_voting": true,
         "google_analytics": "",
