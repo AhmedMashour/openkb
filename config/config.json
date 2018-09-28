@@ -21,11 +21,11 @@
         "mermaid": false,
         "mathjax": false,
         "mathjax_input_mode": "TeX-MML-AM_CHTML",
-        "app_context": "",
+        "app_context": "kb",
         "links_blank_page": true,
         "database": {
             "type": "mongodb",
-            "connection_string":"mongodb://rocketchat:qoln5n5ayad@cluster0-shard-00-02-gest3.mongodb.net:27017/openkb?replicaSet=Cluster0-shard-0&ssl=true&authSource=admin"
+            "connection_string":"localhost:27017/openkb"
         },
         "allow_voting": true,
         "google_analytics": "",

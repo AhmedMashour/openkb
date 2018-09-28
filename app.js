@@ -25,7 +25,7 @@ var api = require('./routes/api');
 
 var app = express();
 
-app.use(function (req, res, next) {
+app.use("/kb",function (req, res, next) {
 
 	// Website you wish to allow to connect
 	res.setHeader('Access-Control-Allow-Origin', '*');
@@ -227,13 +227,13 @@ handlebars = handlebars.create({
 });
 
 app.enable('trust proxy');
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 6000);
 app.set('bind', process.env.BIND || '0.0.0.0');
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(cookieParser('5TOCyfH3HuszKGzFZntk'));
-app.use(session({
+app.use("/kb",logger('dev'));
+app.use("/kb",bodyParser.json());
+app.use("/kb",bodyParser.urlencoded({extended: false}));
+app.use("/kb",cookieParser('5TOCyfH3HuszKGzFZntk'));
+app.use("/kb",session({
     resave: false,
     saveUninitialized: true,
     secret: 'pAgGxo8Hzg7PFlv1HpO8Eg0Y6xtP7zYx',
@@ -269,10 +269,10 @@ app.use(app_context + '/lunr', express.static(path.join(__dirname, 'node_modules
 app.use(app_context + '/favicon.png', express.static(path.join(__dirname, 'public/favicon.png')));
 
 // serving static content
-app.use(express.static(path.join(__dirname, 'public')));
+app.use("/kb",express.static(path.join(__dirname, 'public')));
 
 // Make stuff accessible to our router
-app.use(function (req, res, next){
+app.use("/kb",function (req, res, next){
 	req.markdownit = markdownit;
 	req.handlebars = handlebars.helpers;
     req.bcrypt = bcrypt;
@@ -303,7 +303,7 @@ app.use(function(req, res, next){
 // development error handler
 // will print stacktrace
 if(app.get('env') === 'development'){
-    app.use(function (err, req, res, next){
+    app.use("/kb",function (err, req, res, next){
         console.error(err.stack);
         res.status(err.status || 500);
         res.render('error', {
@@ -317,7 +317,7 @@ if(app.get('env') === 'development'){
 
 // production error handler
 // no stacktraces leaked to user
-app.use(function (err, req, res, next){
+app.use("/kb",function (err, req, res, next){
     console.error(err.stack);
     res.status(err.status || 500);
     res.render('error', {
@@ -330,7 +330,7 @@ app.use(function (err, req, res, next){
 
 // sets up the databse depending on whether it's embedded (NeDB) or MongoDB
 console.log(config.settings.database.type )
-if(config.settings.database.type == 'embedded'){
+if(config.settings.database.type == 'embedded') {
     // setup the db's
     var db = new Nedb();
     db = {};
@@ -347,8 +347,8 @@ if(config.settings.database.type == 'embedded'){
         app.index = index;
 
         // lift the app
-        app.listen(process.env.PORT||3000, app.get('bind'), function (){
-            console.log('openKB running on host: http://' + app.get('bind') + ':' + 3000);
+        app.listen(process.env.PORT||6000, app.get('bind'), function (){
+            console.log('openKB running on host: http://' + app.get('bind') + ':' + 6000);
             app.emit('openKBstarted');
         });
     });
