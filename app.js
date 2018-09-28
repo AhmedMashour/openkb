@@ -228,7 +228,7 @@ handlebars = handlebars.create({
 
 app.enable('trust proxy');
 app.set('port', process.env.PORT || 6000);
-app.set('bind', process.env.BIND || '127.0.0.1');
+// app.set('bind', process.env.BIND || '127.0.0.1');
 app.use(logger('dev'));
 app.use("/kb",bodyParser.json());
 app.use("/kb",bodyParser.urlencoded({extended: false}));
@@ -377,8 +377,8 @@ if(config.settings.database.type == 'embedded') {
             // add the index
             app.index = index;
             // lift the app
-            app.listen(app.get('port'), app.get('bind'), function (){
-                console.log('openKB running on host: http://' + app.get('bind') + ':' + app.get('port'));
+            app.listen(app.get('port'), function (){
+                // console.log('openKB running on host: http://' + app.get('bind') + ':' + app.get('port'));
                 app.emit('openKBstarted');
             });
         });
