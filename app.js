@@ -238,7 +238,7 @@ app.use("/kb",session({
     saveUninitialized: true,
     secret: 'pAgGxo8Hzg7PFlv1HpO8Eg0Y6xtP7zYx',
     cookie: {
-        path: '/',
+        path: '/kb',
         name:'kid',
         httpOnly: true,
         maxAge: 3600000 * 24
